@@ -5,13 +5,14 @@ export default function EasyChart() {
     const amounts = [];
     const day = [];
     const newData = JSON.parse(data);
+    
     newData.forEach(obj => {
         amounts.push(obj.amount)
         day.push(obj.day)
         let res = (obj.amount / 100) * 160;
         console.log(res);
     });
-    
+
     return (
         <div className='w-[400px]'>
             <div className='w-full h-auto flex flex-row justify-between bg-[#ec775f] rounded-lg p-5 text-white'>

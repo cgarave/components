@@ -1,18 +1,7 @@
 import logo from './assets/logo.svg'
 import datas from '../data.json'
-
 export default function Chart() {
-    function setBarHeight(data){
-        let fixedHeight = 160;
-        let setNewHeight = data[0].amount / 100 * fixedHeight;
 
-        return setNewHeight;
-    }
-    
-    fetch('data.json')
-    .then(response => response.json())
-    .then(y => setBarHeight(y))
-    
     return (
         <div className='w-[400px]'>
             <div className='w-full h-auto flex flex-row justify-between bg-[#ec775f] rounded-lg p-5 text-white'>
@@ -31,7 +20,7 @@ export default function Chart() {
                         return (
                             <div className='group flex flex-col items-center text-center w-10' key={i}>
                                 <div className='hidden group-hover:block bg-black rounded-md text-[10px] text-white mb-1 w-12'>${data.amount}</div>
-                                <div className='w-full h-40 bg-[#ec775f] rounded-md'></div>
+                                <div id='bar' className='w-full bg-[#ec775f] rounded-md'></div>
                                 <h1>{data.day}</h1>
                             </div>
                         )
